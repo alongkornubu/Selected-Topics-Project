@@ -10,7 +10,9 @@ docker-compose up -d
 sleep 5;
 
 # Run migrations
-docker-compose run --rm backend alembic upgrade head
+docker-compose run --rm backend alembic upgrade head # python manage.py makemigrations
+#docker exec -it pos_backend_1 bash
+#alembic upgrade head
 
 # Create initial data
 docker-compose run --rm backend python3 app/initial_data.py

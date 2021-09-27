@@ -42,7 +42,7 @@ export const SignUp: FC = () => {
         if (data) {
           history.push('/');
         }
-      } catch (err) {
+      } catch (err: any) {
         if (err instanceof Error) {
           // handle errors thrown from frontend
           setError(err.message);

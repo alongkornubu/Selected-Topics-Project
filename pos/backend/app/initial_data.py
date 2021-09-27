@@ -19,6 +19,16 @@ def init() -> None:
         ),
     )
 
+    create_user(
+        db,
+        UserCreate(
+            email="paul@pos.com",
+            password="password",
+            is_active=True,
+            is_superuser=False,
+        ),
+    )
+
 
 if __name__ == "__main__":
     print("Creating superuser admin@pos.com")

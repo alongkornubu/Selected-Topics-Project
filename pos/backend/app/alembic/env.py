@@ -28,7 +28,9 @@ target_metadata = Base.metadata
 
 
 def get_url():
-    return os.getenv("DATABASE_URL")
+    url = os.getenv("DATABASE_URL")
+    print('alembic url: {url}')
+    return url
 
 
 def run_migrations_offline():
