@@ -3,10 +3,13 @@
 #CRUD
 
 Frontend
--cd frontend
--npm start
+1.cd frontend
+2.npm start
 
 Backend
--cd backend
--uvicorn main:app --reload
+1.cd backend
+2.uvicorn main:app --reload
+
+DOCKER
+1.
 
