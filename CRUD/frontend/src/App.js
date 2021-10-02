@@ -16,31 +16,32 @@ function App() {
   const [users, setUsers] = useState([])
   const[user, setUser] = useState({})
   const fetchUsers = async() =>{
-    const response = await axios.get('https//localhost:8000/')
+    const response = await axios.get('http://localhost:8000/')
     return setUsers(response.data)
   }
   //fetchUsers()
   const fetchUser = async(id) =>{
-    const response = await axios.get(`https//localhost:8000/${id}`)
+    const response = await axios.get(`http://localhost:8000/${id}`)
     return setUsers(response.data)
   }
   const createOrEditUser = async(id) =>{
     if(user.id){
-      await axios.put(`http//localhost:8000/${id}`, user)
+      await axios.put(`http://localhost:8000/${id}`, user)
     }else{
-      await axios.post(`http//localhost:8000/`, user)
+      await axios.post(`http://localhost:8000/`, user)
     }
    await fetchUsers()
    await setUser({id: 0, name: '', email: ''})
   }
   const deleteUser = async(id) =>{
-    await axios.delete(`http//localhost:8000/${id}`)
+    await axios.delete(`http://localhost:8000/${id}`)
     await fetchUsers()
   }
   return (
     <div>
        <AppBar position="static">
         <Toolbar>
+          <h1>CRUD</h1>
           <Button color="inherit">users</Button>
         </Toolbar>
       </AppBar>
@@ -51,17 +52,16 @@ function App() {
       <Table aria-label="simple table">
         <TableBody>
       <TableRow>
-              <TableCell>
+            <TableCell>
               <TextField value={user.name} onChange={(e) => setUser({...user, name:e.target.value})} id="standard-basic" label="Name"/>
-              </TableCell>
-              <TableCell>
+            </TableCell>
+            <TableCell>
               <TextField value={user.email} onChange={(e) => setUser({...user, email:e.target.value})} id="standard-basic" label="Email"/>
-              </TableCell>
-              <TableCell>
+            </TableCell>
+            <TableCell>
               <TextField value={user.password} onChange={(e) => setUser({...user,password:e.target.value})} id="standard-basic" label="Password"/>
-              </TableCell>
+            </TableCell>
               <TableCell>
-
               </TableCell>
               <TableCell>
               <Button onClick={()=> createOrEditUser()} variant="contained" color="primary">
