@@ -8,6 +8,7 @@ Frontend
 
 Backend
 1.cd backend
+2. WINDOWS:.\env\Scripts\activate
 2.uvicorn main:app --reload
 
 DOCKER
