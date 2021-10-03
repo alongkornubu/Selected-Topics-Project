@@ -7,7 +7,7 @@
 
 #Backend 
 *  cd backend 
-* WINDOWS:.\env\Scripts\activate 
+* WINDOWS: .\env\Scripts\activate 
 * pip install -r requirements.txt 
 * uvicorn main:app --reload
 
