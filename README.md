@@ -2,11 +2,11 @@
 
 #CRUD
 
-Frontend
+*Frontend
 *1.cd frontend
 *2.npm start
 
-Backend
+*Backend
 *1.cd backend
 *2. WINDOWS:.\env\Scripts\activate
 *3.pip install -r requirements.txt
