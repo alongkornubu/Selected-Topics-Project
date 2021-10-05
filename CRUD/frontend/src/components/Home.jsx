@@ -9,6 +9,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableRow from '@mui/material/TableRow';
 import TextField from '@mui/material/TextField';
 
+// use axios
 import axios from 'axios'
 import {useState} from 'react'
 
@@ -39,7 +40,7 @@ function App() {
   }
   return (
     <div>
-       <AppBar position="static">
+       <AppBar position="secondary">
         <Toolbar>
           <h1>CRUD</h1>
           
@@ -87,7 +88,7 @@ function App() {
               </Button>
               </TableCell>
               <TableCell>
-              <Button onClick={()=> deleteUser(row.id)} variant="contained" color="error">
+              <Button onClick={()=> deleteUser(row.id)} variant="contained" color="success">
                 Delete
               </Button>
               </TableCell>
