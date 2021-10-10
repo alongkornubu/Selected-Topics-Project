@@ -20,14 +20,14 @@ function App() {
     const response = await axios.get('http://localhost:8000/')
     return setUsers(response.data)
   }
- 
+// fetchUsers()
   const fetchUser = async(id) =>{
     const response = await axios.get(`http://localhost:8000/${id}`)
     return setUser(response.data)
   }
-  const createOrEditUser = async(id) =>{
+  const createOrEditUser = async() =>{
     if(user.id){
-      await axios.put(`http://localhost:8000/${id}`, user)
+      await axios.put(`http://localhost:8000/${user.id}`, user)
     }else{
       await axios.post(`http://localhost:8000/`, user)
     }
@@ -48,7 +48,7 @@ function App() {
       </AppBar>
       <Box m={10}>
     <TableContainer>
-    {/* <TextField value={user.id} type="hidden"/> */}
+    <TextField value={user.id} type="hidden"/>
 
       <Table aria-label="simple table">
         <TableBody>
